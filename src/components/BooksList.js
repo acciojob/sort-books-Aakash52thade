@@ -34,7 +34,7 @@ const BooksList = () => {
 
       <div className="controls">
         <div>
-          <label>Sort By:</label>
+          <label>Sort by:</label>
           <select value={sortBy} onChange={handleSortChange} className="sort-by">
             <option value="title">Title</option>
             <option value="author">Author</option>
