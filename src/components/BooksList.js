@@ -30,21 +30,16 @@ const BooksList = () => {
 
   return (
     <div className="book-list-container">
-      {/* 1. FIXED: Title matched to test expectation */}
-      <h1>NYT Best Sellers</h1>
+      <h1>Books List</h1>
 
-      {/* 2. FIXED: Added Labels. Using a simple structure to ensure select:nth-child works relative to the div */}
       <div className="controls">
-        <label htmlFor="sort-by">Sort By:</label>
-        {/* select:nth-child(2) within this div if label is 1st, or use unique IDs */}
-        <select id="sort-by" value={sortBy} onChange={handleSortChange} className="sort-by">
+        <select value={sortBy} onChange={handleSortChange} className="sort-by">
           <option value="title">Title</option>
           <option value="author">Author</option>
           <option value="publisher">Publisher</option>
         </select>
 
-        <label htmlFor="order">Order:</label>
-        <select id="order" value={sortOrder} onChange={handleOrderChange} className="sort-order">
+        <select value={sortOrder} onChange={handleOrderChange} className="sort-order">
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
@@ -60,8 +55,8 @@ const BooksList = () => {
           </tr>
         </thead>
         <tbody>
-          {books.map((book) => (
-            <tr key={book.primary_isbn13 || book.title}>
+          {books.map((book, index) => (
+            <tr key={book.primary_isbn13 || index}>
               <td>{book.title}</td>
               <td>{book.author}</td>
               <td>{book.publisher}</td>
