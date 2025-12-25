@@ -33,16 +33,22 @@ const BooksList = () => {
       <h1>Books List</h1>
 
       <div className="controls">
-        <select value={sortBy} onChange={handleSortChange} className="sort-by">
-          <option value="title">Title</option>
-          <option value="author">Author</option>
-          <option value="publisher">Publisher</option>
-        </select>
+        <div>
+          <label>Sort By:</label>
+          <select value={sortBy} onChange={handleSortChange} className="sort-by">
+            <option value="title">Title</option>
+            <option value="author">Author</option>
+            <option value="publisher">Publisher</option>
+          </select>
+        </div>
 
-        <select value={sortOrder} onChange={handleOrderChange} className="sort-order">
-          <option value="asc">Ascending</option>
-          <option value="desc">Descending</option>
-        </select>
+        <div>
+          <label>Order:</label>
+          <select value={sortOrder} onChange={handleOrderChange} className="sort-order">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
       </div>
 
       <table border="1" style={{ marginTop: "20px", width: "100%", textAlign: "left" }}>
