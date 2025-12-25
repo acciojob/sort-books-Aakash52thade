@@ -27,6 +27,7 @@ export const fetchBooks = createAsyncThunk(
       return formattedBooks;
     } catch (error) {
       throw Error("Failed to fetch books");
+      
     }
   }
 );
